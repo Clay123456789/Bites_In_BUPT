@@ -1,0 +1,135 @@
+/* pages/homePage/homePage.wxss */
+
+/*轮播图*/
+swiper{
+  width: 100%;
+  height: calc(100vw *300/770);
+}
+/*搜索*/
+.search {
+  border: 1px solid fff;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  height: 60rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+
+}
+
+.search_arr {
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+ 
+.page_row{
+  display: flex;
+  width: 100%;
+  background-color: #D4BF98;
+  flex-direction: row
+}
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left:25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+/*分类*/
+.category {
+  width: 100%;
+  padding: 36rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.category view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding:10rpx 24rpx;
+}
+
+.category image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.category text {
+  font-size: 28rpx;
+  color: #666;
+}
+/*公告*/
+.notice{
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  flex-direction: row
+}
+.gonggao{
+  border: 1px solid fff;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  height: 60rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background: #FDF9F3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+
+}
+
+.notice_img {
+  position: absolute;
+  left:50rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.notice_text{
+  margin-left: 70rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+/*导航栏*/
+.nav{
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  padding: 20rpx;
+  background-color: rgb(129, 241, 55);
+  font-size: 30rpx;
+ }
+ .nav-switch-style{
+  color: snow;
+ }
+ .style-default{
+  background-color: rgb(247, 229, 130);
+  padding: 100rpx 0;
+  text-align: center;
+ }
+ .style-roll{
+  background-color: rgb(130, 177, 247);
+  padding: 100rpx 0;
+  text-align: center;
+ }

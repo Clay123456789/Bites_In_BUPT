@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/homePage/homePage",
+    "pages/findPage/findPage",
+    "pages/issuePage/issuePage",
+    "pages/newsPage/newsPage",
+    "pages/minePage/minePage",
+    "pages/search/search",
+    "pages/meal/meal"
+  ],
+  "tabBar":{
+    "list":[
+  
+    {
+      "pagePath":"pages/homePage/homePage",
+  
+      "text":"主页",
+  
+      "iconPath": "/images/login.jpg",
+  
+      "selectedIconPath": "/images/login.jpg"
+  
+    },
+    {
+      "pagePath":"pages/findPage/findPage",
+  
+      "text":"发现",
+  
+      "iconPath": "/images/login.jpg",
+  
+      "selectedIconPath": "/images/login.jpg"
+  
+    }, 
+    {
+      "pagePath":"pages/issuePage/issuePage",
+  
+      "text":"+",
+  
+      "iconPath": "/images/login.jpg",
+  
+      "selectedIconPath": "/images/login.jpg"
+  
+    },
+    {
+      "pagePath":"pages/newsPage/newsPage",
+  
+      "text":"消息",
+  
+      "iconPath": "/images/login.jpg",
+  
+      "selectedIconPath": "/images/login.jpg"
+  
+    },
+    {
+      "pagePath":"pages/minePage/minePage",
+  
+      "text": "我的",
+  
+      "iconPath": "/images/login.jpg",
+  
+     "selectedIconPath": "/images/login.jpg"
+  
+    }
+  
+    ]
+  
+  },
+
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
