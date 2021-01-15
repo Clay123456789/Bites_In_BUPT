@@ -1,0 +1,50 @@
+<!--pages/findPage/findPage.wxml-->
+<!-- 顶部搜索框 --> 
+<view class='page_row' bindtap='sousuo'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" disabled placeholder="秋天的第一杯奶茶" value="{{searchValue}}"/>
+      </view>
+   </view>
+</view>
+<!--导航栏-->
+<view class="nav" >
+ <view bindtap="navSwitch" data-index="0" class="{{navState==0 ? 'nav-switch-style':''}}">热门话题</view>
+ <view bindtap="navSwitch" data-index="1" class="{{navState==1 ? 'nav-switch-style':''}}">我加入的话题</view>
+ <view bindtap="navSwitch" data-index="2" class="{{navState==2 ? 'nav-switch-style':''}}">创建话题</view>
+</view>
+<!-- 不可滑动页 -->
+<view>
+ <view wx:if="{{navState==0}}" class="style-default">
+  <view class='topic'>
+    <view wx:for="{{topic}}" wx:key='{{index}}' data-tags='{{item.id}}' data-content='{{item.name}}' >
+      <image src='{{item.img}}' mode='aspectFit'></image>
+      <text>{{item.name}} </text>
+    </view>
+  </view>
+</view>
+ <view wx:elif="{{navState==1}}" class="style-default">2</view>
+ <view wx:elif="{{navState==2}}" class="style-default">3</view>
+</view>
+<!-- 滑动页 -->
+<swiper bindchange="bindchange" current="{{navState}}">
+ <block>
+ <swiper-item>
+ <view class="style-roll">
+ <text>左右可滑动1</text>
+ </view>
+ </swiper-item>
+ <swiper-item>
+ <view class="style-roll">
+ <text>左右可滑动2</text>
+ </view>
+ </swiper-item>
+ <swiper-item>
+ <view class="style-roll">
+ <text>左右可滑动3</text>
+ </view>
+ </swiper-item>
+ </block>
+</swiper>
+
