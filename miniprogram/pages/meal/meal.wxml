@@ -1,0 +1,47 @@
+<view class='store-container'>
+  <view  bindtap='sousuo'>
+    <view class="search">
+        <icon  size='20' type='search'></icon>
+        <input  value="{{searchValue}}"/>
+     </view>
+  </view>
+  <!--公告-->
+<view class='notice'>
+    <view class="gonggao">
+      <view>
+        <image class="notice_img" src='/images/login.jpg'></image>
+        <text class='notice_text'>今天也要好好吃饭呢！</text>
+      </view>
+   </view>
+</view>
+<!--菜品分类-->
+  <view class='food'>
+    <view class='food-class' style='height:{{listHeight}}px'>
+      <scroll-view scroll-y scroll-with-animation scroll-into-view="{{viewToLeft}}" style='height:{{listHeight}}px'>
+        <view class="food-class-item {{activeIndex==index?'active':''}}" wx:for="{{food}}" wx:key="item.title" bindtap='selectFood'
+          data-index="{{index}}" data-titleId="{{item.titleId}}" id="{{item.titleId+'left'}}">
+          <view class='text' data-index="{{index}}" data-titleId="{{item.titleId}}">{{item.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='food-detail'>
+      <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' scroll-into-view="{{viewTo}}"
+        bindscroll="scroll">
+        <view wx:for="{{food}}" wx:key="item.title" class="title-group" wx:for-index="groupindex">
+          <view class='title' id='{{item.titleId}}'>{{item.title}}</view>
+          <view wx:for="{{item.items}}" wx:key="item.Id" class='food-info' wx:for-index="index">
+           <view class='img' >
+              <image  src="{{item.img}}" mode="aspectFit"></image>
+            </view>
+              <view class='info'>
+              <view class='name'>{{item.name}}</view>
+              <view class='note'>{{item.note}}</view>
+              <view class='price'>￥{{item.price}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
