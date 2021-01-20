@@ -1,7 +1,10 @@
 {
+  "components": [
+    "components/single-dropdown-select/single-dropdown-select"
+  ],
   "pages": [
     "pages/login/login",
-    "pages/register/register",
+    "pages/signUp/signUp",
     "pages/homePage/homePage",
     "pages/findPage/findPage",
     "pages/issuePage/issuePage",
@@ -72,7 +75,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发",
+    "navigationBarTitleText": "邮处佳肴",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

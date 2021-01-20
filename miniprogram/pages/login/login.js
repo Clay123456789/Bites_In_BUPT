@@ -1,19 +1,21 @@
+const db = wx.cloud.database().collection("userBasics")
 Page({
   data: {
+    openid:"",
    //判断小程序的API，回调，参数，组件等是否在当前版本可用。
    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
-   var that = this;
-   // 查看是否授权
+    //获取用户openID
+    this.getOpenid()
+    // 查看是否授权
    wx.getSetting({
     success: function (res) {
      if (res.authSetting['scope.userInfo']) {
       wx.getUserInfo({
        success: function (res) {
-        //从数据库获取用户信息
-        that.queryUsreInfo();
         //用户已经授权过
+        //跳转到主页
         wx.switchTab({
          url: '../homePage/homePage'
         })
@@ -23,32 +25,47 @@ Page({
     }
    })
   },
+
+  // 定义调用云函数获取openid
+  getOpenid(){
+    //获取id
+    let page = this;
+    wx.cloud.callFunction({
+      name:'getOpenid',
+      complete:res=>{
+        console.log('openid--',res.result)
+        var openid = res.result.openid
+        page.setData({
+          openid:openid
+        })
+      }
+    })
+    
+  },
+  
   bindGetUserInfo: function (e) {
    if (e.detail.userInfo) {
     //用户按了允许授权按钮
-    var that = this;
-    //插入登录的用户的相关信息到数据库
-    wx.request({
-     url: getApp().globalData.urlPath + 'hstc_interface/insert_user',
-     data: {
-      openid: getApp().globalData.openid,
-      nickName: e.detail.userInfo.nickName,
-      avatarUrl: e.detail.userInfo.avatarUrl,
-      province:e.detail.userInfo.province,
-      city: e.detail.userInfo.city
-     },
-     header: {
-      'content-type': 'application/json'
-     },
-     success: function (res) {
-      //从数据库获取用户信息
-      that.queryUsreInfo();
-      console.log("插入小程序登录用户信息成功！");
-     }
-    });
-    //授权成功后，跳转进入小程序首页
-    wx.switchTab({
-     url: '../homePage/homePage' 
+    //判断该用户信息是否已在数据库中
+    db.where({
+      _openid:this.data.openid
+    }).get({
+      success:res => {
+        if(res.data.length > 0){//数据库中已有数据
+        //跳转到主页
+        wx.switchTab({
+          url: '../homePage/homePage'
+         })
+        }else{
+        //跳转到用户注册界面
+        wx.navigateTo({
+          url: '../signUp/signUp',
+        })
+        }
+      },
+      fail:res => {
+        console("查询失败",err)
+      }
     })
    } else {
     //用户按了拒绝按钮
@@ -64,22 +81,6 @@ Page({
      }
     })
    }
-  },
-  //获取用户信息接口
-  queryUsreInfo: function () {
-   wx.request({
-    url: getApp().globalData.urlPath + 'hstc_interface/queryByOpenid',
-    data: {
-     openid: getApp().globalData.openid
-    },
-    header: {
-     'content-type': 'application/json'
-    },
-    success: function (res) {
-     console.log(res.data);
-     getApp().globalData.userInfo = res.data;
-    }
-   })
-  },
-  
+  }
+
  })
