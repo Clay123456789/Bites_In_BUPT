@@ -1,0 +1,97 @@
+/* pages/mine/minePage/minePage.wxss */.top {
+  height: 250rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:40rpx;
+  border: 1px solid #CCCCFF;
+  margin: 50px 10px 4px 10px;
+}
+
+.buttona{
+  width:150rpx;
+  height:60rpx;
+  color:black;
+  font-size: 26rpx;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.buttonb{
+  width:150rpx;
+  height:60rpx;
+  color:black;
+  font-size: 26rpx;
+}
+
+
+.namef{
+  font-size: 30rpx;
+  font-weight:bolder;
+  display: flex;
+  justify-content: center; 
+}
+
+.middlea {
+  height: 200rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.middlea text{
+  font-weight:bolder;
+  font-size: 35rpx;
+}
+
+.middleb {
+  height: 280rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+  margin: 4px 7px 4px 7px;
+}
+
+.middleb text{
+  font-weight:bold;
+  font-size: 35rpx;
+}
+
+.view_fengexian {
+  width: 96%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0rpx 2% 0rpx 2%;
+}
+
+/* 两个view的样式 */
+.view_fengexian view {
+  width: 33%;
+  height: 2rpx;
+  background: linear-gradient(to right, #ead6ee, #a0f1ea);
+}
+
+/* 字体的样式 */
+.text_fengexian {
+  font-size: 25rpx;
+  color: rgb(253, 143, 143);
+  margin: 0rpx 2% 0rpx 2%;
+}
+
+.bottom {
+  height: 180rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+}
+
+.bottom text{
+  font-weight:bolder;
+  font-size: 35rpx;
+}

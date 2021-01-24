@@ -1,0 +1,19 @@
+<swiper class='swiper' indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <swiper-item>
+        <image src="{{item.url}}" data-id='{{item.id}}'class="slide-image" />
+      </swiper-item>
+    </block>
+</swiper>
+<block  wx:for="{{list}}" wxkey="index">
+ <image class="img" src="{{item.img}}"></image>
+ <view class="info">
+  <text>{{item.name}}  </text>
+    <text wx:if="{{item.gender==1}}" > 男</text>
+    <text wx:elif="{{item.gender==2}}"> 女</text>
+    <text wx:elif="{{item.gender==0}}" > 未知</text>
+  <view>北京邮电大学/{{item.grade}}/{{item.major}}</view>
+  <view>个性签名：{{item.signature}}</view>
+ </view>
+</block>
+

@@ -1,0 +1,24 @@
+<!--pages/mine/minePage/minePage.wxml-->
+<view class = "top">
+  <button class ="buttona" bindtap="change" >编辑</button>
+  <block  wx:for="{{list}}" wxkey="index">
+    <view class='namef'>{{item.name}}</view>
+  </block>
+  <view>
+    <button class ="buttonb" bindtap="zhuye" >主页</button>
+  </view>
+</view>
+<view class = "middlea">
+  <text>邮处佳肴</text>
+</view>
+<view class = "middleb">
+  <text>我的评论</text>
+  <view class="view_fengexian">
+	 <view ></view>
+	 <text class="text_fengexian">分割线</text>
+	 <view ></view>
+  </view>
+</view>
+<view class = "bottom">
+  <text>服务工具</text>
+</view>

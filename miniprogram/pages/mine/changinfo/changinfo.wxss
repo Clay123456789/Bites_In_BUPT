@@ -1,0 +1,17 @@
+
+.save {
+  width: 50%;
+  padding: 5rpx;
+  margin-top: 50rpx;
+  font-weight: none;
+  font-size: 40rpx;
+  color: #fff;
+  background-color: #298ef7;
+}
+
+.xin {
+  border: 1px solid #ccc;
+  margin: 3px 6px;
+  width: 93%;
+  padding: 4px;
+}

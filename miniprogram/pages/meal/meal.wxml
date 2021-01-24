@@ -1,2 +1,0 @@
-<!--pages/meal/meal.wxml-->
-<text>这里是{{name}}页面,id为{{id}}</text>

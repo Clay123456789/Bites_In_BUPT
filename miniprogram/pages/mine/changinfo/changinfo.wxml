@@ -1,0 +1,23 @@
+
+<view class="page">
+  <text style="padding-left:102px;">更改个人信息</text>
+  <view style="margin:4px 18px;">
+    <view>
+      <text>年级：</text>
+      <input class="xin" bindinput="updgrade" placeholder="请输入要修改的年级"></input>
+    </view>
+    <view>
+      <text>专业：</text>
+      <input class="xin" bindinput="updmajor" placeholder="请输入要修改的专业"></input>
+    </view>
+    <view>
+      <text>昵称：</text>
+      <input class="xin" bindinput="updname" placeholder="请输入要修改昵称"></input>
+    </view>
+    <view>
+      <text>个性签名：</text>
+      <input class="xin" bindinput="updsignature" placeholder="请输入要修改个性签名"></input>
+    </view>
+  </view>
+  <button bindtap="save" class="save"  type="primary">保存</button>
+</view>

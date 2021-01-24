@@ -1,0 +1,50 @@
+<!--pages/meal/basicMeal/basicMeal.wxml-->
+<view class="meal2_container">
+  <view  bindtap='sousuo'>
+    <view class="search">
+        <icon  size='20' type='search'></icon>
+        <input  value="{{searchValue}}"/>
+     </view>
+  </view>
+  <!--公告-->
+<view class='notice'>
+    <view class="gonggao">
+      <view>
+        <image class="notice_img" src='/images/login.jpg'></image>
+        <text class='notice_text'>今天也要好好吃饭呢！</text>
+      </view>
+   </view>
+</view>
+<!--窗口们-->
+<view class='store'>
+  <!--楼层：学一、学二等【左侧栏】-->
+  <view class='store-class' style='height:{{listHeight}}px'>
+      <scroll-view scroll-y scroll-with-animation scroll-into-view="{{viewToLeft}}" style='height:{{listHeight}}px'>
+        <view class="store-class-item {{activeIndex==index?'active':''}}" wx:for="{{store}}" wx:key="item.title" bindtap='selectStore'
+          data-index="{{index}}" data-titleId="{{item.titleId}}" id="{{item.titleId+'left'}}">
+          <view class='text' data-index="{{index}}" data-titleId="{{item.titleId}}">{{item.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  <!--对应窗口们【右侧栏】-->
+ <view class="store-detail">
+  <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' scroll-into-view="{{viewTo}}">
+        <view wx:for="{{store}}" wx:key="item.title" class="title-group" >
+          <view class='title' id='{{item.titleId}}'  >{{item.title}}</view>
+          <view wx:for="{{item.items}}" wx:key="item.storeId" class='store-info' bindtap="goStore" data-tags='{{item.storeId}}' data-storename="{{item.name}}">
+           <view class='img' >
+              <image  src="{{item.img}}" mode="aspectFit"></image>
+            </view>
+              <view class='info'>
+              <view class='name'>{{item.name}}</view>
+              <view class='note'>{{item.note}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+ </view>
+  
+
+</view>
+</view>
+

@@ -3,72 +3,58 @@
     "components/single-dropdown-select/single-dropdown-select"
   ],
   "pages": [
-    "pages/login/login",
-    "pages/signUp/signUp",
-    "pages/homePage/homePage",
-    "pages/findPage/findPage",
-    "pages/issuePage/issuePage",
-    "pages/newsPage/newsPage",
-    "pages/minePage/minePage",
-    "pages/search/search",
-    "pages/meal/meal"
+    "pages/login/signIn/signIn",
+    "pages/login/signUp/signUp",
+
+    "pages/home/homePage/homePage",
+    "pages/home/search/search",
+    "pages/home/meal/breakfast/breakfast",
+    "pages/home/meal/basicMeal/basicMeal",
+    "pages/home/meal/basicMeal_detail/basicMeal_detail",
+
+    "pages/find/findPage/findPage",
+
+    "pages/issue/issuePage/issuePage",
+
+    "pages/news/newsPage/newsPage",
+
+    "pages/mine/minePage/minePage",
+    "pages/mine/myinfo/myinfo",
+    "pages/mine/changinfo/changinfo"
   ],
   "tabBar":{
-    "list":[
-  
-    {
-      "pagePath":"pages/homePage/homePage",
-  
-      "text":"主页",
-  
-      "iconPath": "/images/login.jpg",
-  
-      "selectedIconPath": "/images/login.jpg"
-  
-    },
-    {
-      "pagePath":"pages/findPage/findPage",
-  
-      "text":"发现",
-  
-      "iconPath": "/images/login.jpg",
-  
-      "selectedIconPath": "/images/login.jpg"
-  
-    }, 
-    {
-      "pagePath":"pages/issuePage/issuePage",
-  
-      "text":"+",
-  
-      "iconPath": "/images/login.jpg",
-  
-      "selectedIconPath": "/images/login.jpg"
-  
-    },
-    {
-      "pagePath":"pages/newsPage/newsPage",
-  
-      "text":"消息",
-  
-      "iconPath": "/images/login.jpg",
-  
-      "selectedIconPath": "/images/login.jpg"
-  
-    },
-    {
-      "pagePath":"pages/minePage/minePage",
-  
-      "text": "我的",
-  
-      "iconPath": "/images/login.jpg",
-  
-     "selectedIconPath": "/images/login.jpg"
-  
-    }
-  
+    "list": [
+      {
+        "pagePath": "pages/home/homePage/homePage",
+        "text": "主页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_1.png"
+      },
+      {
+        "pagePath": "pages/find/findPage/findPage",
+        "text": "发现",
+        "iconPath": "/images/find.png",
+        "selectedIconPath": "/images/find_1.png"
+      },
+      {
+        "pagePath": "pages/issue/issuePage/issuePage",
+        "text": "+",
+        "iconPath": "/images/add.png",
+        "selectedIconPath": "/images/add_1.png"
+      },
+      {
+        "pagePath": "pages/news/newsPage/newsPage",
+        "text": "消息",
+        "iconPath": "/images/message.png",
+        "selectedIconPath": "/images/message_1.png"
+      },
+      {
+        "pagePath": "pages/mine/minePage/minePage",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my_1.png"
+      }
     ]
-  
   },
 
   "window": {

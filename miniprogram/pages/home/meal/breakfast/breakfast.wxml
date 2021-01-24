@@ -1,0 +1,42 @@
+<!--pages/meal/breakfast/breakfast.wxml-->
+<!-- 顶部搜索框 --> 
+<view class='page_row' bindtap='sousuo'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="search_input" disabled placeholder="今天想吃点什么呢" value="{{searchValue}}"/>
+      </view>
+   </view>
+</view>
+
+
+<!-- 公告 -->
+<view class='adsec'>
+  <icon class='iconfont icon-gonggao c_main fs_36'></icon>
+  <text class='c_main fs_26'>公告：</text>
+  <swiper class="swiper_container" autoplay="true" vertical circular="true" interval="2000">
+     <block wx:for="{{msgList}}">
+       <navigator  open-type="navigate">  
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+  
+</view>
+<!-- 公告 end -->
+
+<view class="img">
+       <scroll-view scroll-y="true" style="height: 750px;" scroll-top="0" >
+         
+           <block wx:for="{{imglist}}">
+       <navigator  open-type="navigate" url="/pages/index/index?title={{item.url}}">  
+          <image mode="widthFix" src="{{item.src}}" class="fimg"></image>
+          <view class="swiper_item">{{item.title}}</view>
+      </navigator>
+    </block>
+       </scroll-view>
+      
+ </view>
+
