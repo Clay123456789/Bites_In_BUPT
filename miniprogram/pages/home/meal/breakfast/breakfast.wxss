@@ -1,0 +1,99 @@
+/* pages/meal/breakfast/breakfast.wxss */
+/* 搜索开始 */
+.search {
+  border: 1px solid #aeafad;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  border-width:1rpx;
+  border-color:#aeafad;
+  height: 60rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background: fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+
+}
+.search_arr {
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+ 
+.page_row{
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  flex-direction: row
+}
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left:25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.search_input{
+  border-width:medium;
+  border-color:#000000;
+}
+/* 搜索结束 */
+/* 公告开始 */
+.adsec{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 10rpx auto;
+  background:rgba(254,242,242,1);
+  border-radius:6px;
+  padding: 7rpx 10rpx;
+  height: 50rpx;
+}
+.adsec icon{
+  display: flex;
+  margin-right: 20rpx;
+  color:#f93a42;
+}
+.adsec text{
+  color:#f93a42;
+  flex-direction: row;
+  font-size: 25rpx;
+}
+.swiper_container {
+  height: 55rpx;
+  width: 80%;
+  line-height: 55rpx;
+  padding-left: 0rpx;
+}
+
+.swiper_item {
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+/* 公告结束 */
+
+
+.img {
+ padding :0;
+}
+.fimg{
+  width: 100%;
+  
+}

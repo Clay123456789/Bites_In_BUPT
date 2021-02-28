@@ -1,0 +1,119 @@
+/* pages/mine/minePage/minePage.wxss */
+.top {
+  height: 250rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:40rpx;
+  border: 1px solid #CCCCFF;
+  margin: 5px 10px 4px 10px;
+}
+
+.buttona{
+  width:150rpx;
+  height:60rpx;
+  color:black;
+  font-size: 26rpx;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.buttonb{
+  width:150rpx;
+  height:60rpx;
+  color:black;
+  font-size: 26rpx;
+}
+
+
+.namef{
+  font-size: 30rpx;
+  font-weight:bolder;
+  display: flex;
+  justify-content: center; 
+}
+
+.middlea {
+  height: 200rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.middlea text{
+  font-weight:bolder;
+  font-size: 35rpx;
+}
+
+.middleb {
+  height: 280rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+  margin: 4px 7px 4px 7px;
+}
+
+.middleb text{
+  font-weight:bold;
+  font-size: 35rpx;
+}
+
+.view_fengexian {
+  width: 96%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0rpx 2% 0rpx 2%;
+}
+
+.bottom {
+  height: 180rpx;
+  border-radius:20rpx;
+  border: 1px solid #CCCCFF;
+}
+
+.bottom text{
+  font-weight:bolder;
+  font-size: 35rpx;
+}
+
+.v1{
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  margin-top: 30rpx;
+  width:  200rpx;
+  height:  200rpx;
+  border-radius: 50%;
+  border:  1px solid dimgrey;
+}
+
+.text01 {
+  line-height: 50rpx; 
+  color:  gray; 
+  font-size: 35rpx; 
+}
+
+.layout_horizontal{
+  height: 100rpx;
+  display: flex;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.layout_vertical{
+  height: 100rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+

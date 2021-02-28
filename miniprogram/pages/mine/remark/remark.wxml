@@ -1,0 +1,19 @@
+<!--pages/mine/remark/remark.wxml-->
+<view wx:for="{{list1}}" wx:key="index" >
+  <view class="layout_horizontal">
+    <view wx:for="{{list2}}" wx:key="index">
+      <image src="{{item.img}}" class="touxiang"></image>
+    </view>
+    <view class="sty01">
+      <view class="text">{{item.userName}}</view>
+      <view class="layout_horizontal">
+        <view wx:for="{{item.img}}">
+          <image src="{{item}}" class="picture"></image>
+        </view>
+      </view>
+      <view>评分:{{item.stars}}星</view>
+      <view>评价：{{item.content}}</view>
+    </view> 
+  </view>
+  <view class="divLine"></view>
+</view>

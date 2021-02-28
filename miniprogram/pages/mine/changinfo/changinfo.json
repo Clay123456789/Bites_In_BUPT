@@ -1,0 +1,4 @@
+{
+  "usingComponents": { 
+    "single-dropdown-select": "/components/single-dropdown-select/single-dropdown-select"}
+}

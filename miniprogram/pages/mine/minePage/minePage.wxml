@@ -1,0 +1,40 @@
+<!--pages/mine/minePage/minePage.wxml-->
+<block  wx:for="{{list}}" wx:key="index">
+  <view class='v1'>   
+      <image  bindtap="headimage" src='{{item.img}}' class='head'></image> 
+  </view>  
+</block>
+<view class = "top">
+  <button class ="buttona" bindtap="change" >编辑</button>
+  <block  wx:for="{{list}}" wx:key="index">
+    <view class='namef'>{{item.name}}</view>
+  </block>
+  <view class="layout_horizontal">
+    <view  class="layout_vertical">
+     <view>9000</view>
+     <view class="text01">关注</view>
+    </view>
+    <button class ="buttonb" bindtap="zhuye" >主页</button>
+    <view class="layout_vertical ">
+     <view>52</view>
+     <view class="text01" >粉丝</view>
+    </view>
+  </view>
+</view>
+<view class = "middlea">
+  <text>邮处佳肴</text>
+  <view class="layout_vertical" style=";margin-top:20rpx;margin-left:20rpx">
+    <view style="margin-left:45rpx" bindtap="collection">1</view>
+    <view class="text01" style="font-size:26rpx" bindtap="collection">我的收藏</view>
+  </view>
+</view>
+<view class = "middleb">
+  <text bindtap="remark">我的评论（点击我查看）</text>
+</view>
+<view class = "bottom">
+  <view class="layout_vertical" style="height:200rpx">
+    <text>服务工具</text>
+    <image style="margin-top:10rpx;height:100rpx;width:100rpx" src='/images/login.jpg'></image>
+  </view>
+</view>
+
