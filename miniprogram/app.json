@@ -10,6 +10,7 @@
     "pages/home/meal/breakfast/breakfast",
     "pages/home/meal/basicMeal/basicMeal",
     "pages/home/meal/basicMeal_detail/basicMeal_detail",
+    "pages/home/meal/food_detail/food_detail", 
     "pages/find/findPage/findPage",
     "pages/issue/issuePage/issuePage",
     "pages/news/newsPage/newsPage",
