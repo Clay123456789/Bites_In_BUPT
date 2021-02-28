@@ -4,6 +4,10 @@ swiper{
   width: 100%;
   height: calc(100vw *300/770);
 }
+.img image {
+  width: 100%;
+  height: 100%;
+}
 /*菜单、评价导航栏*/
 .nav{
   height: 78rpx;
@@ -89,7 +93,7 @@ swiper{
 
 .info .name {
   font-size: 36rpx;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .info .note {

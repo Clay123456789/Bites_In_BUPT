@@ -85,8 +85,8 @@
   text-overflow: ellipsis;
 }
 .store-info .img image {
-  width: 100rpx;
-  height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
 .store-info {
   margin-bottom: 30rpx;

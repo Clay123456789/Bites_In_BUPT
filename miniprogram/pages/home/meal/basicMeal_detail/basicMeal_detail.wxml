@@ -3,8 +3,8 @@
  <!--轮播图-->
 <swiper autoplay interval="2000" circular indicator-dots 
 indicator-color="white" indicator-active-color="#FF6633">
-<swiper-item wx:for="{{toDoList_img}}" wx:for-item="images">
-  <image mode="widthFix" src="{{images.img}}"  ></image>
+<swiper-item wx:for="{{toDoList_img}}" wx:for-item="images" class="img" >
+  <image mode="aspectFit" src="{{images.img}}"  data-list="{{toDoList_img}}" data-src="{{images.img}}"  bindtap="previewSwiperImage"></image>
 </swiper-item>
 </swiper> 
  <!--菜单、评价导航栏-->
@@ -18,10 +18,10 @@ indicator-color="white" indicator-active-color="#FF6633">
  <view >
    <!--菜单-->
  <view class='food-detail'>
-      <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' >
-          <view wx:for="{{toDoList}}" wx:for-item="foodlist" class='food-info' >
+      <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' bindscrolltolower="get_toDoList" >
+          <view wx:for="{{toDoList}}" wx:for-item="foodlist" class='food-info' bindtap="showMoreDetail"   data-foodid="{{foodlist._id}}" data-foodname="{{foodlist.name}}">
             <view class='img'>
-              <image src="{{foodlist.img}}"></image>
+              <image src="{{foodlist.img}}"  data-src="{{foodlist.img}}" bindtap="previewFoodImage"></image>
             </view>
             <view class='info'>
               <view class='name'>{{foodlist.name}}</view>
@@ -33,11 +33,8 @@ indicator-color="white" indicator-active-color="#FF6633">
 </view>
  </view>
  </swiper-item>
-  <!--评价-->
  <swiper-item>
- <view >
- <text>左右可滑动2</text>
- </view>
+
  </swiper-item>
 </swiper>
 

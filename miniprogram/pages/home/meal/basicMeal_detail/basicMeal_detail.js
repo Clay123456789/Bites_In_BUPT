@@ -3,133 +3,9 @@ Page({
   data: {
     listHeight: 340,
     navState: 0,//导航状态
-    food: [{
-      storeId: 101,
-      title: "基本伙",
-      //轮播图图片数组
-      images:[{   img:"cloud://flt-env-8g5lcfzi29bfeeae.666c-flt-env-8g5lcfzi29bfeeae-1304781293/学一/窗口内部轮转栏展示图/基本伙.gif",},
-            
-             ],
-      foodlist: [{//食物列表
-          name: "1",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "2",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        }
-      ]
-    },
-    {
-      storeId: 102,
-      title: "港式铁板炒饭+过桥米线",
-      images:[{   img:"cloud://flt-env-8g5lcfzi29bfeeae.666c-flt-env-8g5lcfzi29bfeeae-1304781293/学一/窗口内部轮转栏展示图/学一港式铁板炒饭和过桥米线.gif",},
-             ],
-      foodlist: [{
-        name: "21",
-        price: 0,
-        note: "xxx",
-        img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        }
-      ]
-    },
-    {
-      storeId: 103,
-      title: "窗口三",
-      images:[{
-        imgId:1,
-        img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg",
-    },
-    {
-      imgId:2,
-        img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg",
-  },
-   {
-    imgId:3,
-      img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg",
-    }],
-      foodlist: [{
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        }
-      ]
-    },
-    {
-      storeId: 104,
-      title: "窗口四",
-      images:[{   img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg",},
-      {   img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg", },
-      {   img:"https://p0.meituan.net/adunion/90c2a98c76b1de351d6ba930fdb0cc6931708.jpg",}
-     ],
-      foodlist: [{
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        },
-        {
-          name: "xxxxxx",
-          price: 0,
-          note: "xxx",
-          img:"/images/login.jpg",
-        }
-      ]
-    },
-          ],
-    toDoList:[ //待打印数据的格式
-    {
-      name: "",
-      price: "",
-      note: "",
-      img:"",
-    }],
-    toDoList_img:[ //待打印数据的格式
-      {
-        img:"",
-      }]
-    
+    toDoList:[],//待打印数据
+    toDoList_img:[],
+    remarkList:[]
         },
   //点击导航
   navSwitch: function(e) {
@@ -146,40 +22,73 @@ Page({
       navState:index
       })
       },
+
+  //获取数据
+  get_toDoList:function(storename,location){
+    let len=this.data.toDoList.length
+    wx.cloud.database().collection('dishes').where({
+     windows:storename,
+     location:location,
+     category:"中晚餐"
+    })
+    .skip(len)
+    .get()
+    .then(res=>{
+      console.log("获取成功",res)
+      this.setData({
+        toDoList:this.data.toDoList.concat(res.data)
+      })
+    })
+    .catch(res=>{
+      console.log("获取失败",res)
+    })
+  },
+  showMoreDetail:function(e){
+    console.log(e)
+    wx.navigateTo({
+      url: `../food_detail/food_detail?foodid=${e.currentTarget.dataset.foodid}&foodname=${e.currentTarget.dataset.foodname}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     //动态设置标题
+    console.log(options)
     wx.setNavigationBarTitle({
       title: options.storename
     });
-      var food= this.data.food;
-      var toDoList=this.data.toDoList;
-      var toDoList_img=this.data.toDoList_img;
-    for (var i = 0; i < food.length; i++) {
-      if (food[i].storeId == options.tags) {
-      toDoList=food[i].foodlist,
-      toDoList_img=food[i].images
-    }
-  }
-    this.setData({
-      // 把新的data数组赋值给arrays
-     toDoList: toDoList,
-     toDoList_img: toDoList_img,
-    })
-   // console.log(this.data.toDoList)
-  //console.log(this.data.toDoList_img)
+    this.get_toDoList(options.storename,options.location)
 },
-
-
+//轮转图放大预览
+previewSwiperImage(e) {
+ // console.log(e)
+ var imgsrc=e.currentTarget.dataset.src;
+// var imglist=e.currentTarget.dataset.list
+  wx.previewImage({
+    current:imgsrc,
+    urls: [imgsrc],//urls:imglist用不了
+    success: (res) => {},
+    fail: (res) => {},
+    complete: (res) => {},
+  })
+ },
+ //具体菜品放大预览
+ previewFoodImage(e){
+  console.log(e)
+   wx.previewImage({
+     urls: [e.currentTarget.dataset.src],
+     current: '',
+     success: (res) => {},
+     fail: (res) => {},
+     complete: (res) => {},
+   })
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -205,14 +114,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function (e) {
   },
 
   /**

@@ -29,15 +29,15 @@
   <!--对应窗口们【右侧栏】-->
  <view class="store-detail">
   <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' scroll-into-view="{{viewTo}}">
-        <view wx:for="{{store}}" wx:key="item.title" class="title-group" >
+        <view wx:for="{{store}}" wx:key="item.title" class="title-group">
           <view class='title' id='{{item.titleId}}'  >{{item.title}}</view>
-          <view wx:for="{{item.items}}" wx:key="item.storeId" class='store-info' bindtap="goStore" data-tags='{{item.storeId}}' data-storename="{{item.name}}">
+          <view wx:for="{{item.items}}" wx:for-item="windows"  data-location="{{item.title}}"  class='store-info' bindtap="goStore" data-storename="{{windows.name}}" >
            <view class='img' >
-              <image  src="{{item.img}}" mode="aspectFit"></image>
+              <image  src="{{windows.img}}" mode="aspectFit"></image>
             </view>
               <view class='info'>
-              <view class='name'>{{item.name}}</view>
-              <view class='note'>{{item.note}}</view>
+              <view class='name'>{{windows.name}}</view>
+              <view class='note'>{{windows.note}}</view>
             </view>
           </view>
         </view>
