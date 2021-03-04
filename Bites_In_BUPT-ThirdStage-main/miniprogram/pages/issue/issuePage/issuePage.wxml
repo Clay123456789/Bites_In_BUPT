@@ -1,0 +1,55 @@
+<!--pages/issue/issuePage/issuePage.wxml-->
+<!--服务评价-->
+<view class="service">
+  <!--评分-->
+  <view class='score'>
+    <view class='left'>
+      评分
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  class="star" wx:for="{{userStars}}" wx:key="index">
+        <!-- <image src="{{item}}"></image> -->
+        <i class="{{item}}" style="color:#ff6633"></i>
+      </view>
+      <text class='rtxt'>{{wjxScore}}.0分</text>
+    </view>
+  </view>
+  <!--内容-->
+  <view class='content'>
+    <view class='left'>
+      内容
+    </view>
+    <view class='right'>
+      <text bindtap='label' class="{{taste===true ? 'labelColor':''}}" data-index="{{taste}}">味道好</text>
+      <text bindtap='labe2' class="{{time===false? 'labelColor':''}}" data-index="{{time}}">排队时间短</text>
+      <text bindtap='labe3' class="{{price===false?'labelColor':''}}" data-index="{{price}}">价格实惠</text>
+      <text bindtap='labe4' class="{{environment===false?'labelColor':''}}" data-index="{{environment}}">卫生条件好</text>
+      <text bindtap='labe5' class="{{types===false?'labelColor':''}}" data-index="{{types}}">口味种类多</text>
+      <text bindtap='labe6' class="{{attitude===false?'labelColor':''}}" data-index="{{attitude}}">服务态度好</text>
+      <text bindtap='labe7' class="{{look===false?'labelColor':''}}" data-index="{{look}}">颜值超高</text>
+     
+    </view>
+  </view>
+  <!--图片-->
+  <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       <view src="{{staticImg}}/images/error.png" class='deleteimg' catchtap="deleteImg" data-index="{{index}}">
+       </view>
+       </view>
+     <image src='/images/addr.png' class='add' bindtap='choose'></image> 
+    </view>
+  </view>
+</view>
+<!--textarea-->
+<view class="conts">
+    <textarea class="areas" placeholder='和大家分享一下你的品尝感受吧（最多300字）' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+        <!-- <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text> -->
+    </textarea>
+</view>
+<!--提交评价-->
+<button class='btn'>提交评价</button>

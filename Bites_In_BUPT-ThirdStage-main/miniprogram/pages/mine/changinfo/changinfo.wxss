@@ -1,0 +1,52 @@
+
+.save {
+  width: 50%;
+  padding: 5rpx;
+  margin-top: 50rpx;
+  font-weight: none;
+  font-size: 40rpx;
+  color: #fff;
+  background-color: #298ef7;
+}
+
+.xin {
+  border: 1px solid #ccc;
+  margin: 3px 6px;
+  width: 93%;
+  padding: 4px;
+}
+
+.aa{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bb{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;    
+  text-align: center;
+  font-size: 24px;
+  font-weight:normal;
+}
+
+.v1{
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  margin-top: 30rpx;
+  width:  200rpx;
+  height:  200rpx;
+  border-radius: 50%;
+  border:  1px solid dimgrey;
+}
+ 
+.text {
+   line-height: 50rpx; 
+   color:  lightgray; 
+   font-size: 35rpx; 
+}

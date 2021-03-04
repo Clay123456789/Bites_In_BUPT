@@ -1,0 +1,6 @@
+{
+    "usingComponents": { 
+    "single-dropdown-select": "/components/single-dropdown-select/single-dropdown-select"},
+    "navigationBarBackgroundColor": "#D4BF98",
+    "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,94 @@
+/* pages/find/findPage/findPage.wxss */
+
+/*搜索*/
+.search {
+  border: 1px solid  #d0d0d0;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  height: 60rpx;
+  width: 80%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+
+}
+
+.search_arr {
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+ 
+.page_row{
+  width: 100%;
+  background-color: #fff;
+}
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left:25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+/*导航栏*/
+.nav{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  padding: 20rpx;
+  background-color: #fff ;
+  font-size: 30rpx;
+ }
+ .nav-switch-style{
+  color: blue;
+ }
+ .style-default{
+  background-color: #fff;
+  padding:10rpx 0;
+  text-align: center;
+ }
+ .style-roll{
+  background-color: rgb(130, 177, 247);
+  padding: 100rpx 0;
+  text-align: center;
+ }
+ /*话题*/
+.topic {
+  width: 100%;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.topic view {
+  
+  border: 1px solid  #d0d0d0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding:10rpx 0rpx;
+}
+
+.topic image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.topic text {
+  font-size: 35rpx;
+  color: #666;
+}

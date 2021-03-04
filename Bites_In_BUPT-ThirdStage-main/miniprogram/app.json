@@ -1,0 +1,66 @@
+{
+  "components": [
+    "components/single-dropdown-select/single-dropdown-select"
+  ],
+  "pages": [
+    "pages/login/signIn/signIn",
+    "pages/login/signUp/signUp",
+    "pages/home/homePage/homePage",
+    "pages/home/search/search",
+    "pages/home/meal/breakfast/breakfast",
+    "pages/home/meal/basicMeal/basicMeal",
+    "pages/home/meal/basicMeal_detail/basicMeal_detail",
+    "pages/home/meal/food_detail/food_detail", 
+    "pages/find/findPage/findPage",
+    "pages/issue/issuePage/issuePage",
+    "pages/news/newsPage/newsPage",
+    "pages/mine/minePage/minePage",
+    "pages/mine/myinfo/myinfo",
+    "pages/mine/collection/collection",
+    "pages/mine/remark/remark",
+    "pages/mine/changinfo/changinfo"
+  ],
+  "tabBar":{
+    "list": [
+      {
+        "pagePath": "pages/home/homePage/homePage",
+        "text": "主页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_1.png"
+      },
+      {
+        "pagePath": "pages/find/findPage/findPage",
+        "text": "发现",
+        "iconPath": "/images/find.png",
+        "selectedIconPath": "/images/find_1.png"
+      },
+      {
+        "pagePath": "pages/issue/issuePage/issuePage",
+        "text": "+",
+        "iconPath": "/images/add.png",
+        "selectedIconPath": "/images/add_1.png"
+      },
+      {
+        "pagePath": "pages/news/newsPage/newsPage",
+        "text": "消息",
+        "iconPath": "/images/message.png",
+        "selectedIconPath": "/images/message_1.png"
+      },
+      {
+        "pagePath": "pages/mine/minePage/minePage",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my_1.png"
+      }
+    ]
+  },
+
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "邮处佳肴",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,35 @@
+<view class="page">
+  <view class='aa'>
+   <text class='bb'>修改个人信息</text>
+  </view>
+  <view class='v1'>   
+   <image  bindtap="headimage" src='{{img}}' class='head'></image> 
+   <view  mode="aspecFill"  bindtap="headimage" class='text'>点击更换头像</view>
+  </view>  
+  <view style="margin:4px 18px;">
+    <view  style="display:flex;">
+      <view>入学年份：</view>
+       <view>
+        <single-dropdown-select prop-array='{{selectArray1}}'  bind:select='select1' />
+       </view>
+    </view>
+    <text>\n</text>
+    <view  style="display:flex;">
+      <text>专业：</text>
+       <view>
+        <single-dropdown-select prop-array='{{selectArray2}}'  bind:select='select2' />
+       </view>
+    </view>
+    <text>\n</text>
+    <view>
+      <text>昵称：</text>
+      <input value='{{name}}' class="xin" bindinput="updname" placeholder="请输入要修改昵称"></input>
+    </view>
+    <text>\n</text>
+    <view>
+      <text>个性签名：</text>
+      <input value='{{signature}}' class="xin" bindinput="updsignature" placeholder="请输入要修改个性签名"></input>
+    </view>
+  </view>
+  <button bindtap="save" class="save"  type="primary">保存</button>
+</view>

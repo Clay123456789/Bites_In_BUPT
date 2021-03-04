@@ -1,0 +1,121 @@
+/* pages/mine/collection/collection.wxss */
+/*菜单*/
+.food {
+  display: flex;
+  height: 100%;
+}
+
+.food-class .food-class-item {
+  position: relative;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-class .food-class-item .text {
+  text-align: center;
+  max-height: 80rpx;
+  overflow: hidden;
+}
+
+.food-detail {
+  flex-grow: 1;
+  padding: 0 14rpx;
+  font-size: 26rpx;
+}
+
+.food-detail .title {
+  font-weight: 700;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #eee;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.food-detail .title-group {
+  padding-bottom: 30rpx;
+}
+.food-info {
+  margin-bottom: 30rpx;
+  display: flex;
+}
+.food-info .img {
+  width: 120rpx;
+  text-align: center;
+}
+.food-info .img image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.food-info .info {
+  flex-grow: 1;
+}
+
+.info .name {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.info .note {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search {
+  border: 1px solid fff;
+  box-sizing: border-box;
+  border-radius: 30rpx; 
+  height: 80rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+}
+/*公告*/
+.notice{
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  flex-direction: row
+}
+.gonggao{
+  border: 1px solid fff;
+  box-sizing: border-box;
+  border-radius: 50rpx; 
+  height: 80rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  background: #FDF9F3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 28rpx;
+}
+.notice_img {
+  position: absolute;
+  left:30rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+.notice_text{
+  margin-left: 70rpx;
+  height: 80rpx;
+  border-radius: 5px;
+}
+

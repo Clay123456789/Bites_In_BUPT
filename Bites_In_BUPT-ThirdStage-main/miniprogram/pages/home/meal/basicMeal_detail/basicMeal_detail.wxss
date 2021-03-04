@@ -1,0 +1,103 @@
+/* pages/meal/basicMeal_detail/basicMeal_detail.wxss */
+/*轮播图*/
+swiper{
+  width: 100%;
+  height: calc(100vw *300/770);
+}
+.img image {
+  width: 100%;
+  height: 100%;
+}
+/*菜单、评价导航栏*/
+.nav{
+  height: 78rpx;
+  border-bottom: 2rpx solid #eee;
+  display: flex;
+  position: relative;
+ }
+ .nav .nav-item {
+  width: 160rpx;
+  line-height: 78rpx;
+  text-align: center;
+}
+.nav .border {
+  position: absolute;
+  width: 100rpx;
+  height: 5rpx;
+  background-color: #ffd161;
+  top: 76rpx;
+  left: 25rpx;
+  transition: all 0.5s;
+}
+/*菜单*/
+.food {
+  display: flex;
+  height: 100%;
+}
+
+.food-class .food-class-item {
+  position: relative;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-class .food-class-item .text {
+  text-align: center;
+  max-height: 80rpx;
+  overflow: hidden;
+}
+
+.food-detail {
+  flex-grow: 1;
+  padding: 0 14rpx;
+  font-size: 26rpx;
+}
+
+.food-detail .title {
+  font-weight: 700;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #eee;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.food-detail .title-group {
+  padding-bottom: 30rpx;
+}
+.food-info {
+  margin-bottom: 30rpx;
+  display: flex;
+}
+.food-info .img {
+  width: 120rpx;
+  text-align: center;
+}
+.food-info .img image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.food-info .info {
+  flex-grow: 1;
+}
+
+.info .name {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.info .note {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

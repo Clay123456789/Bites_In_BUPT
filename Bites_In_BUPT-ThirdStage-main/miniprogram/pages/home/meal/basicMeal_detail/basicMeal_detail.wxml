@@ -1,0 +1,43 @@
+<!--pages/meal/basicMeal_detail/basicMeal_detail.wxml-->
+<view class="meal2_detail_container">
+ <!--轮播图-->
+<swiper autoplay interval="2000" circular indicator-dots 
+indicator-color="white" indicator-active-color="#FF6633">
+<swiper-item wx:for="{{toDoList_img}}" wx:for-item="images" class="img" >
+  <image mode="aspectFit" src="{{images.img}}"  data-list="{{toDoList_img}}" data-src="{{images.img}}"  bindtap="previewSwiperImage"></image>
+</swiper-item>
+</swiper> 
+ <!--菜单、评价导航栏-->
+<view class="nav" >
+ <view bindtap="navSwitch" data-index="0" class="nav-item">菜单</view>
+ <view bindtap="navSwitch" data-index="1" class="nav-item">评价</view>
+ <view class="border" style="left:{{30+navState*160}}rpx"></view>
+</view>
+<swiper bindchange="bindchange" current="{{navState}}" style='height:{{listHeight}}px'>
+ <swiper-item>
+ <view >
+   <!--菜单-->
+ <view class='food-detail'>
+      <scroll-view scroll-y scroll-with-animation style='height:{{listHeight}}px' bindscrolltolower="get_toDoList" >
+          <view wx:for="{{toDoList}}" wx:for-item="foodlist" class='food-info' bindtap="showMoreDetail"   data-foodid="{{foodlist._id}}" data-foodname="{{foodlist.name}}">
+            <view class='img'>
+              <image src="{{foodlist.img}}"  data-src="{{foodlist.img}}" bindtap="previewFoodImage"></image>
+            </view>
+            <view class='info'>
+              <view class='name'>{{foodlist.name}}</view>
+              <view class='note'>{{foodlist.note}}</view>
+              <view class='price'>￥{{foodlist.price}}</view>
+            </view>
+        </view>
+      </scroll-view>
+</view>
+ </view>
+ </swiper-item>
+ <swiper-item>
+
+ </swiper-item>
+</swiper>
+
+ <!--评价-->
+</view>
+

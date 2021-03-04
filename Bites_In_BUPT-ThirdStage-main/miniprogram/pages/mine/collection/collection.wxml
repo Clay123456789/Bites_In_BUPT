@@ -1,0 +1,29 @@
+<!--pages/mine/collection/collection.wxml-->
+<view class="meal2_container">
+  <view  bindtap='sousuo'>
+    <view class="search">
+        <icon  size='20' type='search'></icon>
+        <input  value="{{searchValue}}"/>
+     </view>
+  </view>
+  <!--公告-->
+  <view class='notice'>
+    <view class="gonggao">
+      <view>
+        <image class="notice_img" src='/images/login.jpg'></image>
+        <text class='notice_text'>来看看今天想吃啥！</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:for="{{list1}}" wx:for-item="item" class='food-info' bindtap="showMoreDetail"   data-foodid="{{item._id}}" data-foodname="{{item.name}}">
+  <view class='img'>
+     <image src="{{item.img}}"  data-src="{{item.img}}" bindtap="previewFoodImage"></image>
+  </view>
+  <view class='info'>
+    <view class='name'>{{item.name}}</view>
+    <view class='price'>￥{{item.price}}</view>
+  </view>
+</view>
+

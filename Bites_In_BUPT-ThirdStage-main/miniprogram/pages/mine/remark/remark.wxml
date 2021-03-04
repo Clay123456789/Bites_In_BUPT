@@ -1,0 +1,28 @@
+<!--pages/mine/remark/remark.wxml-->
+<block  wx:for="{{list2}}" wx:key="index">
+ <image src='/images/banner.jpg' class="img2"></image>
+ <image class="img1" src="{{item.img}}"></image>
+ <view class="info">
+  <text>{{item.name}}</text>
+  <view style="margin-left:30px; font-size:small">{{item.signature}}</view>
+ </view>
+</block>
+<block wx:for="{{list1}}" wx:key="index" >
+  <view class="layout_horizontal">
+    <block wx:for="{{list2}}" wx:key="index" >
+      <image src="{{item.img}}" class="touxiang"></image>
+    </block>
+    <view class="sty01">
+      <view class="text">{{item.userName}}</view>
+      <view class="layout_horizontal">
+        <block wx:for="{{item.remarkImg}}" wx:for-item="userItem" wx:key="userItem">     
+          <image src="{{userItem}}" class="picture"></image>       
+        </block>
+      </view>
+      <view>评分:{{item.stars}}星</view>
+      <view>评价：{{item.content}}</view>
+    </view> 
+  </view>
+  <view class="divLine"></view>
+</block>
+<text>---------------我是有底线的-----------------</text>

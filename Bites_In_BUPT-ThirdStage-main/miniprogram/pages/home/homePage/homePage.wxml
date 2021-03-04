@@ -1,0 +1,112 @@
+<!--pages/home/homePage/homePage.wxml-->
+<!-- 顶部搜索框 --> 
+<view class='page_row' bindtap='sousuo'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" disabled placeholder="北京邮电大学沙河校区菜品" value="{{searchValue}}"/>
+      </view>
+   </view>
+</view>
+
+<!--轮播图-->
+<swiper autoplay interval="2000" circular indicator-dots 
+indicator-color="white" indicator-active-color="#d4bf98">
+<swiper-item>
+  <image mode="widthFix" src="https://s3.ax1x.com/2021/01/15/s0QmFI.jpg"></image>
+</swiper-item>
+<swiper-item>
+  <image mode="widthFix" src="https://s3.ax1x.com/2021/01/15/s0QnYt.jpg"></image>
+</swiper-item>
+<swiper-item>
+  <image  mode="widthFix" src="https://p.pstatp.com/origin/1384600018ac931eebda2"></image>
+</swiper-item>
+</swiper>
+
+<!--分类标签-->
+<view class='category'>
+    <view wx:for="{{category}}" wx:key='{{index}}' data-id='{{item.id}}' data-content='{{item.name}}' bindtap='changBtn'>
+    <i class="{{item.class}}" style="color: {{item.color}}"></i>
+      <text>{{item.name}}</text>
+    </view>
+</view>
+<!-- 公告 -->
+<view class='adsec'>
+  <icon class='iconfont icon-gonggao c_main fs_36'></icon>
+  <text class='c_main fs_26'>公告：</text>
+  <swiper class="swiper_container" autoplay="true" vertical circular="true" interval="2000">
+     <block wx:for="{{msgList}}">
+       <navigator  open-type="navigate">  
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</view>
+<!-- 公告 end -->
+
+<!--导航栏-->
+<scroll-view  scroll-x class="cates">
+  <view class="nav ">
+ <view bindtap="navSwitch" data-index="0" class="{{navState==0 ? 'nav-switch-style':''}}" >美食</view>
+ <view bindtap="navSwitch" data-index="1" class="{{navState==1 ? 'nav-switch-style':''}}" >特色早餐</view>
+ <view bindtap="navSwitch" data-index="2" class="{{navState==2 ? 'nav-switch-style':''}}" >特色中晚餐</view>
+</view>
+</scroll-view>
+
+<!-- 滑动页 -->
+<swiper bindchange="bindchange" current="{{navState}}" class="dishes">
+ <!-- 美食下方滑块图 -->
+ <swiper-item class="meishi">
+    <scroll-view scroll-y="true" class="content">
+      <block  class="meishi_img_block">
+       <navigator  open-type="navigate" url="/pages/zwancan/zwancan?title={{item.url}}">  
+          <view class="meishi1">
+            <image mode="widthFix" src="https://p.pstatp.com/origin/1376a00021fdc3f647181"></image> 
+          </view>
+          <view class="meishi1">
+            <image mode="widthFix" src="https://p.pstatp.com/origin/138930000ba0b2dda8a03"></image>
+          </view>
+          <view class="meishi1">
+            <image mode="widthFix" src="https://p.pstatp.com/origin/137d100033ad7a8e2cae9"></image>
+          </view>
+        </navigator>
+        </block>
+      </scroll-view> 
+    
+    
+  </swiper-item>
+     
+      
+     
+       
+<!--特色早餐下方滑块图 -->
+<swiper-item class="TSzaocan">
+    <scroll-view scroll-y="true" class="content">
+      <block  class="meishi_img_block">
+       <navigator  open-type="navigate" url="/pages/zwancan/zwancan?title={{item.url}}">  
+  <image mode="widthFix" src="https://p.pstatp.com/origin/1387b0000a116e6847914"></image> 
+  <image mode="widthFix" src="https://p.pstatp.com/origin/138c80000424d38855f9e"></image>
+  <image mode="widthFix" src="https://p.pstatp.com/origin/ff95000357e647759041"></image>
+    </navigator>
+    </block>
+   </scroll-view> 
+  
+</swiper-item> 
+
+<!-- 特色中晚餐下方滑块图 -->
+  <swiper-item class="TSwancan">
+   <scroll-view scroll-y="true" class="content">
+    <block  class="meishi_img_block">
+       <navigator  open-type="navigate" url="/pages/zwancan/zwancan?title={{item.url}}">  
+  <image mode="widthFix" src="https://p.pstatp.com/origin/138b7000055bab129f460"></image> 
+  <image mode="widthFix" src="https://p.pstatp.com/origin/fecd0002d33220b81b99"></image>
+  <image mode="widthFix" src="https://p.pstatp.com/origin/fe680002337152150f96"></image>
+      </navigator>
+    </block>
+   </scroll-view> 
+  </swiper-item>  
+
+    </swiper>
+  
